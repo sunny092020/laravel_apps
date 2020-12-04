@@ -20,5 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/products', function () {
-    return Product::all();
+    return Product::paginate();
 });
