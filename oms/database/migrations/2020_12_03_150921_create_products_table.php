@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->integer('code');
             $table->string('name');
             $table->string('name_jp');
-            $table->integer('kind');
+            $table->integer('type');
             $table->double('price');
             $table->string('unit');
             $table->double('usable_rate');
