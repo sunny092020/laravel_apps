@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->double('price');
             $table->string('unit');
             $table->double('usable_rate');
+            $table->foreignId('provider_id');
             $table->dateTimeTz('min_valid_at', 0);
             $table->dateTimeTz('max_valid_at', 0);
         });
