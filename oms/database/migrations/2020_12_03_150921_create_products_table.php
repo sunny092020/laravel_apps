@@ -17,12 +17,12 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->integer('code');
             $table->string('name');
-            $table->string('name_jp');
+            $table->string('name_jp')->nullable();
             $table->integer('type');
-            $table->double('price');
-            $table->string('unit');
-            $table->double('usable_rate');
-            $table->foreignId('provider_id');
+            $table->double('price')->nullable();
+            $table->string('unit')->nullable();
+            $table->double('usable_rate')->nullable();
+            $table->string('provider')->nullable();
             $table->dateTimeTz('min_valid_at', 0);
             $table->dateTimeTz('max_valid_at', 0);
         });
