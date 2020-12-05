@@ -7,7 +7,10 @@
 @endsection
 
 @section('content')
-  <table id="product" class="display" style="width:100%">
+  Date: 2020/11/11
+  <br/>
+  Order place: <input type="text" size="5" />
+  <table id="product" class="cell-border" style="width:100%">
     <thead>
         <tr>
             <th>type</th>
@@ -31,7 +34,7 @@
             <td>{{ $product->name }}</td>
             <td>{{ $product->name_jp }}</td>
             <td>{{ $product->unit }}</td>
-            <td></td>
+            <td><input type="text" size="5" /></td>
             <td></td>
             <td></td>
             <td>{{ $product->price }}</td>
