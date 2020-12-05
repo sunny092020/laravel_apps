@@ -10,6 +10,6 @@ class OrderController extends Controller
     //
     public function new()
     {        
-        return view('order.new', ['products' => Product::paginate()]);
+        return view('order.new', ['products' => Product::all()]);
     }
 }
