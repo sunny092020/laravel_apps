@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-  Date: 2020/11/11
+  Date: {{ \Carbon\Carbon::now() }}
   <br/><br/>
   Order place: <select>
     @foreach ($departments as $department)
