@@ -8,8 +8,12 @@
 
 @section('content')
   Date: 2020/11/11
-  <br/>
-  Order place: <input type="text" size="5" />
+  <br/><br/>
+  Order place: <select>
+    @foreach ($departments as $department)
+        <option value="{{ $department->id }}">{{ $department->name}} </option>
+    @endforeach
+  </select>
   <table id="product" class="cell-border" style="width:100%">
     <thead>
         <tr>
