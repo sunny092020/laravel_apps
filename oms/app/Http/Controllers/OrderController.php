@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Department;
 
+use Illuminate\Support\Facades\Log;
+
 class OrderController extends Controller
 {
     //
@@ -16,4 +18,16 @@ class OrderController extends Controller
             'departments' => Department::all(['id', 'name'])
         ]);
     }
+
+    public function update(Request $request)
+    {
+        $data = $request->all();
+        #create or update your data here
+
+        Log::debug('An informational message.');
+
+
+        return response()->json(['success'=>'Ajax request submitted successfully']);
+    }
+
 }

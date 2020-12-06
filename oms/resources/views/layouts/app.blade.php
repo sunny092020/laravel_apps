@@ -1,6 +1,8 @@
 <html>
     <head>
         <title>App Name - @yield('title')</title>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
         <link rel="stylesheet" href="{{asset('css/datatables.css')}}">
         <link rel="stylesheet" href="{{asset('css/dataTables.bootstrap.css')}}">
         <link rel="stylesheet" href="{{asset('css/dataTables.bootstrap4.css')}}">
@@ -14,6 +16,8 @@
 
         <script src="{{asset('js/jquery.js')}}"></script>
         <script src="{{asset('js/jquery-ui.min.js')}}"></script>
+        <script src="{{asset('js/utils.js')}}"></script>
+        <script src="{{asset('js/ajax.js')}}"></script>
         <script src="{{asset('js/datatables.js')}}"></script>
 
         @yield('script')

@@ -21,9 +21,31 @@ $(document).ready(function(){
   $( ".quantity" ).change(function() {
     var tr = $(this).closest( "tr" );
     var product_id = table.row( tr ).cell( tr.index(), 'id:name' ).data();
-    var quantity = $(this).val()
-    console.log( product_id);
-    console.log( quantity );
+    var quantity = $(this).val();
+    var department = $("#department").val();
+
+    var params = "department=" + encodeURIComponent(department) + "&" +
+                 "product_id=" + encodeURIComponent(product_id) + "&" +
+                 "quantity=" + encodeURIComponent(quantity);
+    var url = "/orders/update";
+
+    var post = function() {
+      $.ajax({
+        url: url,
+        type:'post',
+        data: params,
+        dataType: 'text',
+        success: function(data, textStatus) {
+          console.log("success")
+        },
+        error: function(xmlHttpRequest, textStatus, errorThrown) {
+          console.log("error")
+        }
+      });
+    };
+
+    post();
+
   });
   
 });

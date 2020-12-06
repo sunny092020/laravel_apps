@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/orders/new', [OrderController::class, 'new']);
+Route::post('/orders/update', [OrderController::class, 'update']);
