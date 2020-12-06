@@ -17,7 +17,6 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->dateTimeTz('ordered_at', 0);
             $table->foreignId('ordered_from_department_id');
-            $table->foreignId('ordered_user_id');
         });
     }
 

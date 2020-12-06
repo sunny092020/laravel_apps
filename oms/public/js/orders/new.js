@@ -22,9 +22,9 @@ $(document).ready(function(){
     var tr = $(this).closest( "tr" );
     var product_id = table.row( tr ).cell( tr.index(), 'id:name' ).data();
     var quantity = $(this).val();
-    var department = $("#department").val();
+    var department_id = $("#department").val();
 
-    var params = "department=" + encodeURIComponent(department) + "&" +
+    var params = "department_id=" + encodeURIComponent(department_id) + "&" +
                  "product_id=" + encodeURIComponent(product_id) + "&" +
                  "quantity=" + encodeURIComponent(quantity);
     var url = "/orders/update";

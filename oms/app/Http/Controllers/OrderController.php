@@ -21,7 +21,7 @@ class OrderController extends Controller
 
     public function update(Request $request)
     {
-        $department = $request->input('department');
+        $department_id = $request->input('department_id');
         $product_id = $request->input('product_id');
         $quantity = $request->input('quantity');
         $user_id = 1;
