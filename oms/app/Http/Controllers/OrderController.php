@@ -24,7 +24,7 @@ class OrderController extends Controller
         $data = $request->all();
         #create or update your data here
 
-        Log::debug('An informational message.');
+        Log::info($data);
 
 
         return response()->json(['success'=>'Ajax request submitted successfully']);
