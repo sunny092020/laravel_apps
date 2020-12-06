@@ -21,10 +21,11 @@ class OrderController extends Controller
 
     public function update(Request $request)
     {
-        $data = $request->all();
-        #create or update your data here
+        $department = $request->input('department');
+        $product_id = $request->input('product_id');
+        $quantity = $request->input('quantity');
+        $user_id = 1;
 
-        Log::info($data);
 
 
         return response()->json(['success'=>'Ajax request submitted successfully']);
