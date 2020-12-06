@@ -9,7 +9,7 @@
 @section('content')
   Date: {{ \Carbon\Carbon::now() }}
   <br/><br/>
-  Order place: <select>
+  Order place: <select id="department">
     @foreach ($departments as $department)
         <option value="{{ $department->id }}">{{ $department->name}} </option>
     @endforeach
@@ -17,6 +17,7 @@
   <table id="product" class="cell-border" style="width:100%">
     <thead>
         <tr>
+            <th>id</th>
             <th>type</th>
             <th>code</th>
             <th>name</th>
@@ -33,12 +34,13 @@
     <tbody>
         @foreach ($products as $product)
         <tr>
+            <td>{{ $product->id }}</td>
             <td>{{ $product->type }}</td>
             <td>{{ $product->code }}</td>
             <td>{{ $product->name }}</td>
             <td>{{ $product->name_jp }}</td>
             <td>{{ $product->unit }}</td>
-            <td><input type="text" size="5" /></td>
+            <td><input type="text" class="quantity" size="5" /></td>
             <td></td>
             <td></td>
             <td>{{ $product->price }}</td>
