@@ -17,7 +17,7 @@ class CreateOrderDetailsTable extends Migration
             $table->id();
             $table->foreignId('order_id');
             $table->foreignId('product_id');
-            $table->double('ordered_quantity');
+            $table->double('quantity');
             $table->foreignId('ordered_user_id');
         });
     }
