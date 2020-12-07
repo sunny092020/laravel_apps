@@ -15,8 +15,25 @@ use Illuminate\Support\Facades\DB;
 class OrderController extends Controller
 {
     //
-    public function new()
+    public function new(Request $request)
     {        
+        $now = Carbon::now();
+
+        $department_id = $request->input('department_id');
+        if(!$department_id) {
+            $department_id = Department::first()->id;
+        }
+        Log::debug($department_id);
+        
+        $start_of_day = $now->copy()->startOfDay();
+        $end_of_day = $now->copy()->endOfDay();
+        $today_order = Order::
+            where('ordered_from_department_id', $department_id)->
+            where('ordered_at', '>=', $start_of_day)->
+            where('ordered_at', '<=', $end_of_day)->first();
+
+        $today_order_details = OrderDetail::where('order_id', $today_order->id)->get();
+        
         return view('order.new', [
             'products' => Product::all(),
             'departments' => Department::all(['id', 'name'])

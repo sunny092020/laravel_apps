@@ -18,6 +18,10 @@ $(document).ready(function(){
     paging:         false,
   });
 
+  $( "#department" ).change(function() {
+    window.location.href = window.location.href + "?department_id=" + $(this).val();
+  });
+
   $( ".quantity" ).change(function() {
     var tr = $(this).closest( "tr" );
     var product_id = table.row( tr ).cell( tr.index(), 'id:name' ).data();
